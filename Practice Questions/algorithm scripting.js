@@ -83,5 +83,56 @@ console.log(booWho(true));
 console.log(booWho(false)); 
 console.log(booWho('string'));
 
+//Capitalize first letter 
+function titleCase(str) {
+  return str
+    .toLowerCase() 
+    .split(' ') 
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1)) 
+    .join(' '); 
+}
+console.log(titleCase("I'm a little tea pot")); 
+//FrankenSplice array
+function FrankenSplice(arr1, arr2,n){
+  let result= arr2.slice();
+  result.splice(n,0,...arr1);
+  return result;
+}
+console.log (FrankenSplice([1,2,3],[4,6,8],1));
 
+//Remove falsy values
+function Bouncer(arr){
+  return arr.filter(Boolean);
+}
+console.log(Bouncer([7,"Java","","Script",false, 0]));
+
+//Find the index
+function getIndexToIns(arr, num) {
+  let sortedArr = arr.slice().sort((a, b) => a - b);
+
+  return sortedArr.findIndex(x => x >= num);
+}
+
+console.log(getIndexToIns([40, 60], 50));
+
+//Muatation 
+function mutation(arr) {
+  const [str1, str2] = arr.map(str => str.toLowerCase());
+  return [...str2].every(char => str1.includes(char));
+}
+console.log(mutation(["hello", "ole"]));
+
+//chunky array method 
+function chunkArrayInGroups(arr, size) {
+  const result = [];
+  
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  
+  return result;
+}
+
+const chunks = chunkArrayInGroups(["a", "b", "c", "d","e"], 2);
+chunks.forEach(chunk => console.log(chunk)); 
 
