@@ -28,7 +28,7 @@ console.log (Sparrow);
 
 //by receive arguments
 function Bird(name,color,legs) {
-    this.name = name;
+    this.name = name;  
     this.color = color;
     this.legs = 2;
 }
@@ -120,5 +120,5 @@ function Dog(name) {
   Dog.prototype.isPrototypeOf(woo); 
   
   Object.prototype.isPrototypeOf(Dog.prototype); 
-  
+   
   

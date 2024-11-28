@@ -20,7 +20,7 @@ console.log(employees);
 employees.splice(1, 1); 
 console.log(employees);
 
-//Add item using slice
+//Add item using splice
 employees.splice(1, 0, "Saad - Engineer"); 
 console.log(employees);
 
